@@ -24,29 +24,33 @@ const PaginationPage = () => {
       ))}
 
       <div className="flex justify-center">
-        <button 
-        disabled={currentPage === 1} 
-        onClick={()=>setCurrentPage((prev)=> prev-1)} 
-        className={"border p-1 m-1" 
-        + 
-        (currentPage === 1 ? " border-amber-300 bg-amber-700": "") }>
-            prev
-            </button>
+        <button
+          disabled={currentPage === 1}
+          onClick={() => setCurrentPage((prev) => prev - 1)}
+          className={
+            "border p-1 m-1" +
+            (currentPage === 1 ? " border-amber-300 bg-amber-700" : "")
+          }
+        >
+          prev
+        </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
-            onClick={() => setCurrentPage(index + 1 )}
+            onClick={() => setCurrentPage(index + 1)}
             className={`border p-1 m-1 ${currentPage === index + 1 ? "bg-black text-white" : ""} `}
           >
             {index + 1}
           </button>
         ))}
-        <button 
-        disabled={currentPage === totalPages} 
-        onClick={()=>setCurrentPage((prev)=> prev+1)}
-        className={"border p-1 m-1" 
-        + 
-        (currentPage === totalPages ? " border-amber-300 bg-amber-700": "") }>
-            next
+        <button
+          disabled={currentPage === totalPages}
+          onClick={() => setCurrentPage((prev) => prev + 1)}
+          className={
+            "border p-1 m-1" +
+            (currentPage === totalPages ? " border-amber-300 bg-amber-700" : "")
+          }
+        >
+          next
         </button>
       </div>
     </div>
